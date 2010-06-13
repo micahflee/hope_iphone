@@ -10,22 +10,26 @@
 
 @implementation TheNextHOPEAppDelegate
 
-@synthesize window;
+@synthesize window, tabBarController, webViewSchedule, webViewFavorites, webViewTwitter;
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-
-    // Override point for customization after application launch
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	/*// initialize the web views
+	[webViewFavorites loadHTMLString:@"favorites.html" baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]]];
+	[webViewTwitter loadHTMLString:@"twitter.html" baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] resourcePath]]];
+	[webViewSchedule loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"schedule" ofType:@"html"]isDirectory:NO]]];*/
 	
-    [window makeKeyAndVisible];
-	
+	// attach the tab bar controller and launch
+	[window addSubview:[tabBarController view]];
+	[window makeKeyAndVisible];
 	return YES;
 }
 
 
 - (void)dealloc {
-    [window release];
-    [super dealloc];
+	[tabBarController release];
+	[window release];
+	[super dealloc];
 }
 
 
