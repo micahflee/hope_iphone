@@ -1,0 +1,92 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* TheNextHOPE */ = {
+		activeExec = 0;
+		executables = (
+			753BA96511C584160040C7FD /* TheNextHOPE */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 753BA96511C584160040C7FD /* TheNextHOPE */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* TheNextHOPE */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* TheNextHOPE */,
+		);
+		codeSenseManager = 753BA97E11C5841C0040C7FD /* Code sense */;
+		executables = (
+			753BA96511C584160040C7FD /* TheNextHOPE */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					833,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 298157078;
+			PBXWorkspaceStateSaveDate = 298157078;
+		};
+		sourceControlManager = 753BA97D11C5841C0040C7FD /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	753BA96511C584160040C7FD /* TheNextHOPE */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = TheNextHOPE;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	753BA97D11C5841C0040C7FD /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	753BA97E11C5841C0040C7FD /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}
