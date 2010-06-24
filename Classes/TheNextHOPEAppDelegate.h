@@ -7,23 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ScheduleWebView;
-@class FavoritesWebView;
-@class TwitterWebView;
+#import "JSInterface.h"
 
-@interface TheNextHOPEAppDelegate : NSObject <UIApplicationDelegate> {
+@interface TheNextHOPEAppDelegate : NSObject <UIApplicationDelegate, UIWebViewDelegate> {
 	UIWindow *window;
 	UITabBarController *tabBarController;
-	ScheduleWebView *webViewSchedule;
-	FavoritesWebView *webViewFavorites;
-	TwitterWebView *webViewTwitter;
+	UIWebView *webViewSchedule;
+	UIWebView *webViewFavorites;
+	
+	JSInterface *jsInterface;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
-@property (nonatomic, retain) IBOutlet ScheduleWebView *webViewSchedule;
-@property (nonatomic, retain) IBOutlet FavoritesWebView *webViewFavorites;
-@property (nonatomic, retain) IBOutlet TwitterWebView *webViewTwitter;
+@property (nonatomic, retain) IBOutlet UIWebView *webViewSchedule;
+@property (nonatomic, retain) IBOutlet UIWebView *webViewFavorites;
+
+- (void) setReturnValue:(NSString*)val webView:(UIWebView*)webView;
 
 @end
 
