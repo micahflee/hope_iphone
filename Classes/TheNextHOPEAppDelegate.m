@@ -40,6 +40,7 @@
 		[jsInterface runCommand:url webView:webView];
 		return NO;
 	}
+	
 	return YES;
 }
 

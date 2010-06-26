@@ -13,11 +13,15 @@
 
 @interface JSInterface : NSObject {
 	NSMutableArray* preferences;
-	NSString* prefJSON;
-	NSString* prefFavorites;
-	NSString* prefFilter;
+	NSString* _json;
+	NSString* _favorites;
+	NSString* _filter;
 	float lastDownloadedJSON;
 }
+
+@property (nonatomic, copy) NSString* filter;
+@property (nonatomic, copy) NSString* favorites;
+@property (nonatomic, copy) NSString* json;
 
 - (void) runCommand:(NSURL*)url webView:(UIWebView*)webView;
 - (void) setReturnValue:(NSString*)val webView:(UIWebView*)webView;
@@ -28,11 +32,8 @@
 
 - (NSString*) getScheduleJSON;
 - (NSString*) getNoticeJSON;
-- (NSString*) getFavorites;
-- (void) saveFavorites:(NSString*)favorites;
-- (NSString*) getFilter;
-- (void) saveFilter:(NSString*)filter;
+
 - (void) addToCalendar:(NSString*)eventJson;
-- (bool) haveCalendar;
+- (BOOL) haveCalendar;
 
 @end

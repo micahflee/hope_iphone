@@ -24,7 +24,6 @@
 		75F50D4411D571B300CCC5E9 /* background4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7540890011D32EC0009F74A1 /* background4.jpg */; };
 		75F50D4611D571B400CCC5E9 /* fav_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 7540890111D32EC0009F74A1 /* fav_off.png */; };
 		75F50D4711D571B500CCC5E9 /* fav_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 7540890211D32EC0009F74A1 /* fav_on.png */; };
-		75F50D4E11D571B800CCC5E9 /* jsinterface.js in Sources */ = {isa = PBXBuildFile; fileRef = 7540891C11D32EFF009F74A1 /* jsinterface.js */; };
 		75F50D4F11D571B900CCC5E9 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 7540890311D32EC0009F74A1 /* loading.png */; };
 		75F50D5011D571B900CCC5E9 /* schedule.html in Resources */ = {isa = PBXBuildFile; fileRef = 753BA98311C585A90040C7FD /* schedule.html */; };
 		75F50D5111D571BA00CCC5E9 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 7540890B11D32EC0009F74A1 /* style.css */; };
@@ -70,7 +69,6 @@
 		7540890211D32EC0009F74A1 /* fav_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fav_on.png; sourceTree = "<group>"; };
 		7540890311D32EC0009F74A1 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		7540890B11D32EC0009F74A1 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
-		7540891C11D32EFF009F74A1 /* jsinterface.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = jsinterface.js; path = /Users/micah/projects/thenexthope/hope_iphone/www/js/jsinterface.js; sourceTree = "<absolute>"; };
 		7540895111D3370C009F74A1 /* JSInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSInterface.h; sourceTree = "<group>"; };
 		7540895211D3370C009F74A1 /* JSInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSInterface.m; sourceTree = "<group>"; };
 		75F0449611D5545B002C3DED /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = resources/button.png; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* TheNextHOPEAppDelegate.m in Sources */,
 				7540895311D3370C009F74A1 /* JSInterface.m in Sources */,
-				75F50D4E11D571B800CCC5E9 /* jsinterface.js in Sources */,
 				75F50EAA11D588A900CCC5E9 /* data.js in Sources */,
 				75F50EAB11D588A900CCC5E9 /* favorites.js in Sources */,
 				75F50EAC11D588A900CCC5E9 /* filter.js in Sources */,

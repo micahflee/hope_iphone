@@ -11,6 +11,10 @@
 
 @implementation JSInterface
 
+@synthesize filter = _filter;
+@synthesize favorites = _favorites;
+@synthesize json = _json;
+
 - (id) init {
 	if((self = [super init])) {
 		[self loadPrefs];
@@ -19,52 +23,59 @@
 	return self;
 }
 
+- (void)dealloc {
+	[_filter release];
+	[_favorites release];
+	[_json release];
+	[super dealloc];
+}
+
 - (void) runCommand:(NSURL*)url webView:(UIWebView*)webView {
 	NSString* returnValue = @"";
 	NSString* host = [url host];
-	NSString* path = [url path];
+	//NSString* path = [url path];
 	
 	// getScheduleJSON
-	if([host compare:@"getScheduleJSON"] == NSOrderedSame) {
+	if([host isEqualToString:@"getScheduleJSON"]) {
 		NSLog(@"JSInterface getScheduleJSON");
 		returnValue = [self getScheduleJSON];
 		[self setReturnValue:returnValue webView:webView];
 	}
 	// getNoticeJSON
-	else if([host compare:@"getNoticeJSON"] == NSOrderedSame) {
+	else if([host isEqualToString:@"getNoticeJSON"]) {
 		NSLog(@"JSInterface getNoticeJSON");
 		returnValue = [self getNoticeJSON];
 		[self setReturnValue:returnValue webView:webView];
 		NSLog(@"JSInterface return value is: %@", returnValue);
 	}
 	// getFavorites
-	else if([host compare:@"getFavorites"] == NSOrderedSame) {
+	else if([host isEqualToString:@"getFavorites"]) {
 		NSLog(@"JSInterface getFavorites");
-		returnValue = [self getFavorites];
+		returnValue = self.favorites;
 		[self setReturnValue:returnValue webView:webView];
 		NSLog(@"JSInterface return value is: %@", returnValue);
 	}
 	// saveFavorites
-	else if([host compare:@"saveFavorites"] == NSOrderedSame) {
+	else if([host isEqualToString:@"saveFavorites"]) {
 		NSLog(@"JSInterface saveFavorites");
 	}
 	// getFilter
-	else if([host compare:@"getFilter"] == NSOrderedSame) {
+	else if([host isEqualToString:@"getFilter"]) {
 		NSLog(@"JSInterface getFilter");
-		returnValue = [self getFilter];
+		returnValue = self.filter;
 		[self setReturnValue:returnValue webView:webView];
 		NSLog(@"JSInterface return value is: %@", returnValue);
 	}
 	// saveFilter
-	else if([host compare:@"saveFilter"] == NSOrderedSame) {
+	else if([host isEqualToString:@"saveFilter"]) {
 		NSLog(@"JSInterface saveFilter");
 	}
 	// addToCalendar
-	else if([host compare:@"addToCalendar"] == NSOrderedSame) {
+	else if([host isEqualToString:@"addToCalendar"]) {
 		NSLog(@"JSInterface addToCalendar");
 	}
 	// haveCalendar
-	else if([host compare:@"haveCalendar"] == NSOrderedSame) {
+	else if([host isEqualToString:@"haveCalendar"]) {
 		NSLog(@"JSInterface haveCalendar");
 	}
 	// invalid command
@@ -88,14 +99,14 @@
 	if([[NSFileManager defaultManager] fileExistsAtPath:[self getPrefsPath]]) {
 		NSLog(@"Loading Preferences");
 		preferences = [NSMutableArray arrayWithContentsOfFile:[self getPrefsPath]];
-		prefJSON = [preferences objectAtIndex:0];
-		prefFavorites = [preferences objectAtIndex:1];
-		prefFilter = [preferences objectAtIndex:2];
+		self.json = [preferences objectAtIndex:0];
+		self.favorites = [preferences objectAtIndex:1];
+		self.filter = [preferences objectAtIndex:2];
 	} else {
 		NSLog(@"Create new Preferences file");
-		prefJSON = @"{ }";
-		prefFavorites = @"";
-		prefFilter = @"all";
+		self.json = @"{ }";
+		self.favorites = @"";
+		self.filter = @"all";
 		[self savePrefs];
 	}
 }
@@ -105,9 +116,9 @@
 	
 	// initialize preferences
 	preferences = [NSMutableArray arrayWithCapacity:3];
-	[preferences addObject:prefJSON];
-	[preferences addObject:prefFavorites];
-	[preferences addObject:prefFilter];
+	[preferences addObject:self.json];
+	[preferences addObject:self.favorites];
+	[preferences addObject:self.filter];
 	
 	// save to file
 	[preferences writeToFile:[self getPrefsPath] atomically:YES];
@@ -122,28 +133,11 @@
 	return @"{ }";
 }
 
-- (NSString*) getFavorites {
-	return prefFavorites;
-}
-
-- (void) saveFavorites:(NSString*)favorites {
-	prefFavorites = favorites;
-	[self savePrefs];
-}
-
-- (NSString*) getFilter {
-	return prefFilter;
-}
-
-- (void) saveFilter:(NSString*)filter {
-	prefFilter = filter;
-	[self savePrefs];
-}
 
 - (void) addToCalendar:(NSString*)eventJson {
 }
 
-- (bool) haveCalendar {
+- (BOOL) haveCalendar {
 	return FALSE;
 }
 
