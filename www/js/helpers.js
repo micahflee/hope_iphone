@@ -1,39 +1,39 @@
 function random_background() {
     var random_number = Math.floor(Math.random()*4)+1;
-    $("#body").css('background-image', 'url("images/background'+random_number+'.jpg")');
+    $("#body").css('background-image', 'url("background'+random_number+'.jpg")');
 }
 
 function init() {
     data.load();
+	alert('loaded data');
     favorites.load();
+	alert('loaded favorites');
     filter.load();
+	alert('loaded filter');
 }
 
 function bind_talk_callbacks() {
-    for(var i=0; i<data.talks().length; i++) {
-        talk = data.talks()[i];
-        
-        // bind description show/hide
-        $("#talk"+talk.id+" .content").toggle(function() {
-            var talk_id = $(this).attr('talk_id');
-            $(".description", this).show(200);
-        }, function() {
-            var talk_id = $(this).attr('talk_id');
-            $(".description", this).hide(200);
-        });
-        
-        // bind favorites/unfavorite
-        $("#talk"+talk.id+" .fav").bind('click', function() {
-            var talk_id = $("img", this).attr('talk_id');
-            if(favorites.isFavorite(talk_id)) {
-                $("img", this).attr('src', 'images/fav_off.png');
-                favorites.remove(talk_id);
-            } else {
-                $("img", this).attr('src', 'images/fav_on.png');
-                favorites.add(talk_id);
-            }
-        });
+  $(".content").click(function() {
+    $(".description", this).toggle(200);
+  });
+
+  $(".fav").click(function() {
+    var $this = $(this);
+    var talk_id = $this.attr('talk_id');
+    if(favorites.isFavorite(talk_id)) {
+      $this.attr('src', 'fav_off.png');
+      favorites.remove(talk_id);
+    } else {
+      $this.attr('src', 'fav_on.png');
+      favorites.add(talk_id);
     }
+  });
+  
+  $(".cal").click(function() {
+    var $this = $(this);
+    var talk_id = $this.attr('talk_id');
+    JSInterface.addToCalendar(JSON.stringify(data.talk_by_id(talk_id)));
+  });
 }
 
 function formatted_date(timestamp) {
@@ -83,12 +83,16 @@ function favimg(id) {
 
 function display_talk(talk) {
     var i;
-    html = '';
+    var html = '';
     html += '<div class="talk" id="talk'+talk.id+'">';
     
     // favorite image
     var img_src = favimg(talk.id);
-    html += '<div class="fav"><img src="images/'+img_src+'" talk_id="'+talk.id+'" /></div>';
+    html += '<div class="icons"><img class="fav" src="'+img_src+'" talk_id="'+talk.id+'" />';
+    if (Util.show_calendar()) {
+        html += '<br/><img src="cal.png" class="cal" talk_id="'+talk.id+'" />';
+    }
+    html += '</div>';
     html += '<div class="content" talk_id="'+talk.id+'">';
     // title
     html += '<div class="title">'+talk.title+'</div>';

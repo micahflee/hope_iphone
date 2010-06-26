@@ -6,7 +6,7 @@ html, body {
 body {
     color: #ffffff;
     background-color: #000000;
-    background-image: url("images/background1.jpg");
+    background-image: url("background1.jpg");
     background-position: top center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -93,10 +93,14 @@ p#force-download {
     -webkit-border-radius: 10px;
 }
 
-.talk .fav {
+.talk .icons {
     width: 40px;
     float: left;
     margin-right: 5px;
+}
+
+.talk .icons img {
+    margin-bottom: 5px;
 }
 
 .talk .content {
@@ -130,4 +134,14 @@ p#force-download {
 
 .cleared {
     clear: both;
+}
+
+#query {
+    color: #FFD02F;
+    text-align: center;
+}
+
+#query a {
+    color: inherit;
+    text-decoration: underline;
 }

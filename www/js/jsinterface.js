@@ -1,28 +1,35 @@
-var window.JSInterface = {
-	returnValue : '',
-	doAjaxCall : function(url) {
-		$.ajax({
-			   url : url,
-			   type : 'GET',
-			   dataType : 'jsonp'
-		});
+var JSInterface = {
+	returnValue : null,
+	runCommand : function(command) {
+		window.location = command;
 	},
 	getScheduleJSON : function(forceDownload) {
-		window.JSInterface.doAjaxCall('hope://getScheduleJSON');
-		return window.JSInterface.returnValue;
+		JSInterface.runCommand('hope://getScheduleJSON');
+		return JSInterface.returnValue;
+	},
+	getNoticeJSON : function(forceDownload) {
+		JSInterface.runCommand('hope://getScheduleJSON');
+		return JSInterface.returnValue;
 	},
 	getFavorites : function() {
-		window.JSInterface.doAjaxCall('hope://getFavorites');
-		return window.JSInterface.returnValue;
+		JSInterface.runCommand('hope://getFavorites');
+		return JSInterface.returnValue;
 	},
 	saveFavorites : function(favorites) {
-		window.JSInterface.doAjaxCall('hope://saveFavorites/'+favorites);
+		JSInterface.runCommand('hope://saveFavorites/'+favorites);
 	},
 	getFilter : function() {
-		window.JSInterface.doAjaxCall('hope://getFilter');
-		return window.JSInterface.returnValue;
+		JSInterface.runCommand('hope://getFilter');
+		return JSInterface.returnValue;
 	},
 	saveFilter : function(filter) {
-		window.JSInterface.doAjaxCall('hope://saveFilter/'+filter);
+		JSInterface.runCommand('hope://saveFilter/'+filter);
+	},
+	addToCalendar : function(eventJson) {
+		JSInterface.runCommand('hope://addToCalendar/'+eventJson);
+	},
+	haveCalendar : function() {
+		JSInterface.runCommand('hope://haveCalendar');
+		return JSInterface.returnValue;
 	}
 }

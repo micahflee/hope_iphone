@@ -11,19 +11,26 @@
 
 @interface TheNextHOPEAppDelegate : NSObject <UIApplicationDelegate, UIWebViewDelegate> {
 	UIWindow *window;
-	UITabBarController *tabBarController;
-	UIWebView *webViewSchedule;
-	UIWebView *webViewFavorites;
+	UIWebView *hopeWebView;
+	UIButton *buttonSchedule;
+	UIButton *buttonFavorites;
+	UIButton *buttonSearch;
+	UIButton *buttonNotice;
 	
 	JSInterface *jsInterface;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
-@property (nonatomic, retain) IBOutlet UIWebView *webViewSchedule;
-@property (nonatomic, retain) IBOutlet UIWebView *webViewFavorites;
+@property (nonatomic, retain) IBOutlet UIWebView *hopeWebView;
+@property (nonatomic, retain) IBOutlet UIButton *buttonSchedule;
+@property (nonatomic, retain) IBOutlet UIButton *buttonFavorites;
+@property (nonatomic, retain) IBOutlet UIButton *buttonSearch;
+@property (nonatomic, retain) IBOutlet UIButton *buttonNotice;
 
-- (void) setReturnValue:(NSString*)val webView:(UIWebView*)webView;
+- (IBAction) doButtonSchedule;
+- (IBAction) doButtonFavorites;
+- (IBAction) doButtonSearch;
+- (IBAction) doButtonNotice;
 
 @end
 
