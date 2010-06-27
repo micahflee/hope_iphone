@@ -34,6 +34,7 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
 	NSURL *url = [request URL];
+	NSLog(@"Intercepting a request: %@", [url absoluteString]);
 	
 	// if it's a hope:// url, then it's trying to run some obj-c code
 	if([[url scheme] isEqualToString:@"hope"]) {

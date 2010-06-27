@@ -2,15 +2,14 @@
 <head>
 <title>Schedule</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="jsinterface.js"></script>
-<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="jqurl.js"></script>
-<script type="text/javascript" src="json.js"></script>
-<script type="text/javascript" src="util.js"></script>
-<script type="text/javascript" src="data.js"></script>
-<script type="text/javascript" src="favorites.js"></script>
-<script type="text/javascript" src="filter.js"></script>
-<script type="text/javascript" src="helpers.js"></script>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jqurl.js"></script>
+<script type="text/javascript" src="js/json.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/favorites.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/helpers.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         // for some reason loading screen won't display if we don't wait 1/10 of a second first
@@ -19,22 +18,22 @@
             init();
             
             // define the filter function
-            filter.filter_func = function(talk) {
+            filter.filterFunc = function(talk) {
                 var dayMatches;
                 if(filter.filter == 'all')
                     dayMatches = true;
                 else
-                    dayMatches = (day_of_talk(talk.timestamp).toLowerCase() == filter.filter);
+                    dayMatches = (dayOfTalk(talk.timestamp).toLowerCase() == filter.filter);
 
                 if (filter.query) {
-                    return dayMatches && (Util.talk_concat(talk).indexOf(filter.querylc) >= 0)
+                    return dayMatches && (Util.talkConcat(talk).indexOf(filter.querylc) >= 0)
                 } else {
                     return dayMatches;
                 }
             };
             
             // display the talks, filtering w/ above function
-            display_talks();
+            displayTalks();
             $("#content").show(400);
             $("#loading").hide(100);
         }, 100);
@@ -43,11 +42,11 @@
 </head>
 
 <body id="body">
-    <script type="text/javascript">random_background();</script>
+    <script type="text/javascript">randomBackground();</script>
     <div id="wrapper">
         <h1>Hackers on Planet Earth<br/>SCHEDULE</h1>
         <div id="content"></div>
-        <div id="loading"><img src="loading.png"></div>
+        <div id="loading"><img src="images/loading.png"></div>
     </div>
 </body>
 </html>

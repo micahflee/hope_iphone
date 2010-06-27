@@ -2,7 +2,6 @@
 <head>
 <title>Favorites</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jsinterface.js"></script>
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/json.js"></script>
 <script type="text/javascript" src="js/helpers.js"></script>
@@ -11,7 +10,7 @@
         // for some reason loading screen won't display if we don't wait 1/10 of a second first
         window.setTimeout(function() {
             var html = '<p class="only">';
-            var notice = JSON.parse(window.JSInterface.getNoticeJSON());
+            var notice = JSON.parse(window.JSInterface.getNoticeJson());
             if(notice.didNotLoad) {
                 html += 'Unable to load a notice at this time. Check your internet connection.';
             } else {

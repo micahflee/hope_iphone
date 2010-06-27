@@ -1,9 +1,9 @@
 var filter = {
     filter : 'all',
     query : null,
-    filter_func : function(talk) { return true; },
+    filterFunc : function(talk) { return true; },
     load : function() {
-        filter.filter = JSInterface.getFilter();
+        filter.filter = window.JSInterface.getFilter();
         var q = $.jqURL.get('q');
         if (q) {
           filter.query = decodeURI(q);
@@ -11,7 +11,7 @@ var filter = {
         }
     },
     save : function() {
-        JSInterface.saveFilter(filter.filter);
+        window.JSInterface.saveFilter(filter.filter);
     },
     display : function() {
         var html = '';
@@ -25,7 +25,7 @@ var filter = {
             html += '<p id="query" class="only">';
             // FIXME: escape query
             html += 'Searching for <strong id="filter_query">';
-            html += Util.escape_html(filter.query);
+            html += Util.escapeHtml(filter.query);
             html += '</strong>';
             html += '<br />';
             html += '<a href="#" id="clear_query">Clear Search</a>';
@@ -33,7 +33,7 @@ var filter = {
         }
         return html;
     },
-    bind_callbacks : function() {
+    bindCallbacks : function() {
         // set current filter
         $("#day-"+filter.filter).addClass('current');
         
@@ -45,13 +45,14 @@ var filter = {
                 filter.filter = $(this).attr('filter');
                 filter.save();
                 $("#day-"+filter.filter).addClass('current');
-                display_talks(filter.filter_func);
+                displayTalks(filter.filterFunc);
             });
         }
         $("#clear_query").click(function() {
             filter.query = null;
             $("#query").remove();
-            display_talks(filter.filter_func);
+            displayTalks(filter.filterFunc);
         });
     }
 }
+

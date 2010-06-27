@@ -1,14 +1,21 @@
 var data = {
     d : null, 
     load : function() {
-		alert('data.load() - about to load schedule data');
-		var json = JSInterface.getScheduleJSON(false);
-		alert('data.load() - json data is: '+json);
-		data.d = JSON.parse(json);
-		alert('data.load() - schedule data loaded');
+        data.d = JSON.parse(window.JSInterface.getScheduleJson(false));
+        data.fixTimestamps();
     },
-    load_force : function() {
-        data.d = JSON.parse(JSInterface.getScheduleJSON(true));
+    loadForce : function() {
+        data.d = JSON.parse(window.JSInterface.getScheduleJson(true));
+        data.fixTimestamps();
+    },
+    fixTimestamps : function() {
+        // add 7 hours to timestamps, because they're off
+        var sevenHours = 7*60*60;
+        var i, n = data.d.length;
+        for(i = 0; i < n; ++i) {
+            var newTimestamp = Number(data.d[i].timestamp) + Number(sevenHours);
+            data.d[i].timestamp = newTimestamp;
+        }
     },
     numberOfTalks : function() {
         return data.d.length;
@@ -16,7 +23,7 @@ var data = {
     talks : function() {
         return data.d;
     },
-    talk_by_id : function(wanted) {
+    talkById : function(wanted) {
         var i, n = data.d.length;
         for(i = 0; i < n; ++i) {
           var talk = data.d[i];
