@@ -1,7 +1,11 @@
 var data = {
     d : null, 
     load : function() {
-		data.d = JSON.parse(JSInterface.getScheduleJSON(false));
+		alert('data.load() - about to load schedule data');
+		var json = JSInterface.getScheduleJSON(false);
+		alert('data.load() - json data is: '+json);
+		data.d = JSON.parse(json);
+		alert('data.load() - schedule data loaded');
     },
     load_force : function() {
         data.d = JSON.parse(JSInterface.getScheduleJSON(true));

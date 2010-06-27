@@ -5,11 +5,8 @@ function random_background() {
 
 function init() {
     data.load();
-	alert('loaded data');
     favorites.load();
-	alert('loaded favorites');
     filter.load();
-	alert('loaded filter');
 }
 
 function bind_talk_callbacks() {
