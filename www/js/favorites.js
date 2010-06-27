@@ -1,7 +1,7 @@
 var favorites = {
     ids : new Array(),
     load : function() {
-        favString = window.JSInterface.getFavorites();
+        favString = JSInterface.getFavorites();
         if(favString != "") {
             // for some reason split() isn't working
             // favorites.ids = favString.split(",");
@@ -20,7 +20,7 @@ var favorites = {
         }
     },
     save : function() {
-        window.JSInterface.saveFavorites(favorites.ids.toString());
+        JSInterface.saveFavorites(favorites.ids.toString());
     },
     isFavorite : function(id) {
         for(var i=0; i<favorites.ids.length; i++) {

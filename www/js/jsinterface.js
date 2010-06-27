@@ -1,13 +1,16 @@
 var JSInterface = {
 	returnValue : null,
 	runCommand : function(command) {
-		window.location = command;
+		$("#jsinterface").html('<iframe src="'+command+'"></iframe>');
 	},
-	getScheduleJSON : function(forceDownload) {
-		JSInterface.runCommand('hope://getScheduleJSON');
+	getScheduleJson : function(forceDownload) {
+		if(forceDownload)
+			JSInterface.runCommand('hope://getScheduleJson/true');
+		else
+			JSInterface.runCommand('hope://getScheduleJson/false');
 		return JSInterface.returnValue;
 	},
-	getNoticeJSON : function(forceDownload) {
+	getNoticeJson : function(forceDownload) {
 		JSInterface.runCommand('hope://getScheduleJSON');
 		return JSInterface.returnValue;
 	},

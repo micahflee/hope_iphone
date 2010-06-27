@@ -1,11 +1,11 @@
 var data = {
     d : null, 
     load : function() {
-        data.d = JSON.parse(window.JSInterface.getScheduleJson(false));
+        data.d = JSON.parse(JSInterface.getScheduleJson(false));
         data.fixTimestamps();
     },
     loadForce : function() {
-        data.d = JSON.parse(window.JSInterface.getScheduleJson(true));
+        data.d = JSON.parse(JSInterface.getScheduleJson(true));
         data.fixTimestamps();
     },
     fixTimestamps : function() {

@@ -1,6 +1,6 @@
 function randomBackground() {
     var randomNumber = Math.floor(Math.random()*4)+1;
-    $("#body").css('background-image', 'url("images/background'+randomNumber+'.jpg")');
+    $("#body").css('background-image', 'url("background'+randomNumber+'.jpg")');
 }
 
 function init() {
@@ -18,10 +18,10 @@ function bindTalkCallbacks() {
     var $this = $(this);
     var talkId = $this.attr('talkId');
     if(favorites.isFavorite(talkId)) {
-      $this.attr('src', 'images/fav_off.png');
+      $this.attr('src', 'fav_off.png');
       favorites.remove(talkId);
     } else {
-      $this.attr('src', 'images/fav_on.png');
+      $this.attr('src', 'fav_on.png');
       favorites.add(talkId);
     }
   });
@@ -29,7 +29,7 @@ function bindTalkCallbacks() {
   $(".cal").click(function() {
     var $this = $(this);
     var talkId = $this.attr('talkId');
-    window.JSInterface.addToCalendar(JSON.stringify(data.talkById(talkId)));
+    JSInterface.addToCalendar(JSON.stringify(data.talkById(talkId)));
   });
 }
 
@@ -85,9 +85,9 @@ function displayTalk(talk) {
     
     // favorite image
     var img_src = favimg(talk.id);
-    html += '<div class="icons"><img class="fav" src="images/'+img_src+'" talkId="'+talk.id+'" />';
+    html += '<div class="icons"><img class="fav" src="'+img_src+'" talkId="'+talk.id+'" />';
     if (Util.showCalendar()) {
-        html += '<br/><img src="images/cal.png" class="cal" talkId="'+talk.id+'" />';
+        html += '<br/><img src="cal.png" class="cal" talkId="'+talk.id+'" />';
     }
     html += '</div>'; // .icons
     html += '<div class="content" talkId="'+talk.id+'">';

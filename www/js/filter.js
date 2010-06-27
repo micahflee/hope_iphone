@@ -3,7 +3,7 @@ var filter = {
     query : null,
     filterFunc : function(talk) { return true; },
     load : function() {
-        filter.filter = window.JSInterface.getFilter();
+        filter.filter = JSInterface.getFilter();
         var q = $.jqURL.get('q');
         if (q) {
           filter.query = decodeURI(q);
@@ -11,7 +11,7 @@ var filter = {
         }
     },
     save : function() {
-        window.JSInterface.saveFilter(filter.filter);
+        JSInterface.saveFilter(filter.filter);
     },
     display : function() {
         var html = '';

@@ -18,7 +18,7 @@ var Util = (function(){
     // just a caching wrapper for JSInterface.haveCalendar()
     showCalendar: function() {
       if (haveCalendar === undefined)
-        haveCalendar = window.JSInterface.haveCalendar();
+        haveCalendar = JSInterface.haveCalendar();
       
       return haveCalendar;
     }

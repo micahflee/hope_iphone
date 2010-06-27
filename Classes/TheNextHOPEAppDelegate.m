@@ -61,7 +61,7 @@
 }
 
 - (IBAction) doButtonNotice {
-	[hopeWebView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"test" ofType:@"html"]isDirectory:NO]]];
+	[hopeWebView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"notice" ofType:@"html"]isDirectory:NO]]];
 }
 
 @end
