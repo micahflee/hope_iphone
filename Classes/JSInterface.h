@@ -8,20 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-#define SCHEDULE_Json_URL @"http://www.thenexthope.org/hope_schedule/json.php";
-#define NOTICE_Json_URL @"http://www.thenexthope.org/hope_schedule/notice_json.php";
+#define SCHEDULE_JSON_URL @"http://www.thenexthope.org/hope_schedule/json.php"
+#define NOTICE_JSON_URL @"http://www.thenexthope.org/hope_schedule/notice_json.php"
 
 @interface JSInterface : NSObject {
 	NSMutableArray* preferences;
 	NSString* _json;
 	NSString* _favorites;
 	NSString* _filter;
-	float lastDownloadedJson;
+	NSTimeInterval lastDownloadedJson;
 }
 
 @property (nonatomic, copy) NSString* filter;
 @property (nonatomic, copy) NSString* favorites;
 @property (nonatomic, copy) NSString* json;
+
+- (void) alert:(NSString*)message;
 
 - (void) runCommand:(NSURL*)url webView:(UIWebView*)webView;
 - (void) setReturnValue:(NSString*)val webView:(UIWebView*)webView;
@@ -30,7 +32,7 @@
 - (void) loadPrefs;
 - (void) savePrefs;
 
-- (NSString*) getScheduleJson;
+- (NSString*) getScheduleJson:(bool)forceDownload;
 - (NSString*) getNoticeJson;
 
 - (void) addToCalendar:(NSString*)eventJson;

@@ -10,8 +10,8 @@ var JSInterface = {
 			JSInterface.runCommand('hope://getScheduleJson/false');
 		return JSInterface.returnValue;
 	},
-	getNoticeJson : function(forceDownload) {
-		JSInterface.runCommand('hope://getScheduleJSON');
+	getNoticeJson : function() {
+		JSInterface.runCommand('hope://getNoticeJson');
 		return JSInterface.returnValue;
 	},
 	getFavorites : function() {

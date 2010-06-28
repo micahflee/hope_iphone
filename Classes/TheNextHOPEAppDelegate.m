@@ -58,6 +58,7 @@
 }
 
 - (IBAction) doButtonSearch {
+	[hopeWebView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"search" ofType:@"html"]isDirectory:NO]]];
 }
 
 - (IBAction) doButtonNotice {
