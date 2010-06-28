@@ -25,12 +25,6 @@ function bindTalkCallbacks() {
       favorites.add(talkId);
     }
   });
-  
-  $(".cal").click(function() {
-    var $this = $(this);
-    var talkId = $this.attr('talkId');
-    JSInterface.addToCalendar(JSON.stringify(data.talkById(talkId)));
-  });
 }
 
 function formattedDate(timestamp) {
@@ -86,9 +80,6 @@ function displayTalk(talk) {
     // favorite image
     var img_src = favimg(talk.id);
     html += '<div class="icons"><img class="fav" src="'+img_src+'" talkId="'+talk.id+'" />';
-    if (Util.showCalendar()) {
-        html += '<br/><img src="cal.png" class="cal" talkId="'+talk.id+'" />';
-    }
     html += '</div>'; // .icons
     html += '<div class="content" talkId="'+talk.id+'">';
     // title

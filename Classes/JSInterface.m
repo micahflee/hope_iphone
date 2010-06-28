@@ -89,19 +89,6 @@
 		self.filter = path;
 		[self savePrefs];
 	}
-	// addToCalendar
-	else if([host isEqualToString:@"addToCalendar"]) {
-		NSLog(@"JSInterface addToCalendar");
-	}
-	// haveCalendar
-	else if([host isEqualToString:@"haveCalendar"]) {
-		NSLog(@"JSInterface haveCalendar");
-		if([self haveCalendar])
-			returnValue = @"true";
-		else
-			returnValue = @"false";
-		[self setReturnValue:returnValue webView:webView];
-	}
 	// invalid command
 	else {
 		NSLog(@"JSInterface Invalid command: %@", host);
@@ -180,7 +167,8 @@
 	// downloaded new json successfully, now save it and return it
 	self.json = [NSString stringWithString:scheduleJson];
 	[self savePrefs];
-	[self alert:@"Downloaded latest schedule"];
+	//[self alert:@"Downloaded latest schedule"];
+	NSLog(@"Downloaded latest schedule");
 	return self.json;
 }
 
@@ -190,13 +178,6 @@
 	if(noticeJson == nil)
 		return @"{ \"didNotLoad\" : true }";
 	return noticeJson;
-}
-
-- (void) addToCalendar:(NSString*)eventJson {
-}
-
-- (BOOL) haveCalendar {
-	return FALSE;
 }
 
 @end

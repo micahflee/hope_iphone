@@ -1,6 +1,4 @@
 var Util = (function(){
-  var haveCalendar = undefined;
-              
   return {
     escapeHtml: function(str) {
       return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -13,14 +11,6 @@ var Util = (function(){
       }
     
       return arr.join(' ').toLowerCase();
-    },
-    
-    // just a caching wrapper for JSInterface.haveCalendar()
-    showCalendar: function() {
-      if (haveCalendar === undefined)
-        haveCalendar = JSInterface.haveCalendar();
-      
-      return haveCalendar;
     }
   };
 })();

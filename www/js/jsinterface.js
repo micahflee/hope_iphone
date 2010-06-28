@@ -27,12 +27,5 @@ var JSInterface = {
 	},
 	saveFilter : function(filter) {
 		JSInterface.runCommand('hope://saveFilter/'+filter);
-	},
-	addToCalendar : function(eventJson) {
-		JSInterface.runCommand('hope://addToCalendar/'+eventJson);
-	},
-	haveCalendar : function() {
-		JSInterface.runCommand('hope://haveCalendar');
-		return JSInterface.returnValue;
 	}
 }

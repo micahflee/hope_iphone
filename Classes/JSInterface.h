@@ -35,7 +35,4 @@
 - (NSString*) getScheduleJson:(bool)forceDownload;
 - (NSString*) getNoticeJson;
 
-- (void) addToCalendar:(NSString*)eventJson;
-- (BOOL) haveCalendar;
-
 @end
