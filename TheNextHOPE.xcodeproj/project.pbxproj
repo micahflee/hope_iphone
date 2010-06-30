@@ -305,6 +305,7 @@
 				GCC_PREFIX_HEADER = TheNextHOPE_Prefix.pch;
 				INFOPLIST_FILE = "TheNextHOPE-Info.plist";
 				PRODUCT_NAME = TheNextHOPE;
+				SDKROOT = iphoneos3.2;
 			};
 			name = Debug;
 		};
@@ -317,6 +318,7 @@
 				GCC_PREFIX_HEADER = TheNextHOPE_Prefix.pch;
 				INFOPLIST_FILE = "TheNextHOPE-Info.plist";
 				PRODUCT_NAME = TheNextHOPE;
+				SDKROOT = iphoneos3.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -345,6 +347,7 @@
 				GCC_PREFIX_HEADER = TheNextHOPE_Prefix.pch;
 				INFOPLIST_FILE = "TheNextHOPE-Info.plist";
 				PRODUCT_NAME = TheNextHOPE;
+				SDKROOT = iphoneos3.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Ad-Hoc";
@@ -359,7 +362,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FF0B7B06-146E-4572-BB74-4DEA36D929E6";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
