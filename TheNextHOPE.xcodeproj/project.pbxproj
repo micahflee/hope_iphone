@@ -37,6 +37,7 @@
 		7597135C11D80C2400DD1919 /* json.js in Resources */ = {isa = PBXBuildFile; fileRef = 7597133B11D80C1500DD1919 /* json.js */; };
 		7597135D11D80C2400DD1919 /* util.js in Resources */ = {isa = PBXBuildFile; fileRef = 7597133C11D80C1500DD1919 /* util.js */; };
 		7597143F11D821A200DD1919 /* notice.html in Resources */ = {isa = PBXBuildFile; fileRef = 7597143E11D821A200DD1919 /* notice.html */; };
+		75DC11A511DB051000B3B528 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 75DC11A411DB051000B3B528 /* iTunesArtwork */; };
 		75F0449711D5545B002C3DED /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F0449611D5545B002C3DED /* button.png */; };
 		75F0449911D5552E002C3DED /* button_touch.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F0449811D5552E002C3DED /* button_touch.png */; };
 		75F50ED411D589B100CCC5E9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 75F50ED311D589B100CCC5E9 /* icon.png */; };
@@ -77,6 +78,8 @@
 		7597133E11D80C1500DD1919 /* schedule.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = schedule.html; sourceTree = "<group>"; };
 		7597133F11D80C1500DD1919 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		7597143E11D821A200DD1919 /* notice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = notice.html; sourceTree = "<group>"; };
+		75DC11A411DB051000B3B528 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = resources/iTunesArtwork; sourceTree = "<group>"; };
+		75DC11A811DB090B00B3B528 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		75F0449611D5545B002C3DED /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = resources/button.png; sourceTree = "<group>"; };
 		75F0449811D5552E002C3DED /* button_touch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_touch.png; path = resources/button_touch.png; sourceTree = "<group>"; };
 		75F50ED311D589B100CCC5E9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = resources/icon.png; sourceTree = "<group>"; };
@@ -141,12 +144,14 @@
 			isa = PBXGroup;
 			children = (
 				75481EB611D848F10098C467 /* Default.png */,
+				75DC11A411DB051000B3B528 /* iTunesArtwork */,
 				75F0449811D5552E002C3DED /* button_touch.png */,
 				75F0449611D5545B002C3DED /* button.png */,
 				753BA98011C585A90040C7FD /* www */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* TheNextHOPE-Info.plist */,
 				75F50ED311D589B100CCC5E9 /* icon.png */,
+				75DC11A811DB090B00B3B528 /* Entitlements.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				7597135411D80C1500DD1919 /* style.css in Resources */,
 				7597143F11D821A200DD1919 /* notice.html in Resources */,
 				75481EB711D848F10098C467 /* Default.png in Resources */,
+				75DC11A511DB051000B3B528 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/projects/thenexthope/hope_iphone/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -313,6 +320,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/projects/thenexthope/hope_iphone/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TheNextHOPE_Prefix.pch;
@@ -342,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/projects/thenexthope/hope_iphone/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TheNextHOPE_Prefix.pch;
