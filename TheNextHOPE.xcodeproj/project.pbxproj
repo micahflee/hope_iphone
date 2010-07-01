@@ -312,7 +312,7 @@
 				GCC_PREFIX_HEADER = TheNextHOPE_Prefix.pch;
 				INFOPLIST_FILE = "TheNextHOPE-Info.plist";
 				PRODUCT_NAME = TheNextHOPE;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -320,13 +320,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/projects/thenexthope/hope_iphone/Entitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Micah Lee";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TheNextHOPE_Prefix.pch;
 				INFOPLIST_FILE = "TheNextHOPE-Info.plist";
 				PRODUCT_NAME = TheNextHOPE;
-				SDKROOT = iphoneos3.2;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FD3C489F-EFEC-45A3-8914-A554DC36DE67";
+				SDKROOT = iphoneos3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -356,7 +358,7 @@
 				GCC_PREFIX_HEADER = TheNextHOPE_Prefix.pch;
 				INFOPLIST_FILE = "TheNextHOPE-Info.plist";
 				PRODUCT_NAME = TheNextHOPE;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Ad-Hoc";
